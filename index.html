@@ -33,23 +33,13 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/rute_laut1_1.js"></script>
-        <script src="data/route_ferry_2.js"></script>
-        <script src="data/rute_laut4_3.js"></script>
-        <script src="data/rute_laut5_4.js"></script>
-        <script src="data/rute_laut6_5.js"></script>
-        <script src="data/rute_laut7_6.js"></script>
-        <script src="data/rute_laut8_7.js"></script>
-        <script src="data/rute_laut9_8.js"></script>
-        <script src="data/rute_laut10_9.js"></script>
-        <script src="data/rute_laut11_10.js"></script>
-        <script src="data/rute_laut12_11.js"></script>
-        <script src="data/jalur_darat_ors_wkt_12.js"></script>
-        <script src="data/semuacoordinatdanidjoinan_13.js"></script>
+        <script src="data/out_1.js"></script>
+        <script src="data/jalur_darat_ors_wkt_2.js"></script>
+        <script src="data/semuacoordinatdanidjoinan_3.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-10.129924641406522,117.36420910981421],[-6.6448458350064055,121.87529511681852]]);
+        }).fitBounds([[-7.681538368605896,112.26126535802605],[-7.18495525131266,112.90404254505042]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -100,34 +90,34 @@
         });
         layer_OpenStreetMap_0;
         map.addLayer(layer_OpenStreetMap_0);
-        function pop_rute_laut1_1(feature, layer) {
+        function pop_out_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['start_id'] !== null ? autolinker.link(String(feature.properties['start_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['olat'] !== null ? autolinker.link(String(feature.properties['olat']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['start_coordinates'] !== null ? autolinker.link(String(feature.properties['start_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['dlat'] !== null ? autolinker.link(String(feature.properties['dlat']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['start_entry_cost'] !== null ? autolinker.link(String(feature.properties['start_entry_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['dToKM'] !== null ? autolinker.link(String(feature.properties['dToKM']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['end_id'] !== null ? autolinker.link(String(feature.properties['end_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['olon'] !== null ? autolinker.link(String(feature.properties['olon']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['end_coordinates'] !== null ? autolinker.link(String(feature.properties['end_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['dlon'] !== null ? autolinker.link(String(feature.properties['dlon']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['end_exit_cost'] !== null ? autolinker.link(String(feature.properties['end_exit_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['distKM'] !== null ? autolinker.link(String(feature.properties['distKM']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['cost_on_graph'] !== null ? autolinker.link(String(feature.properties['cost_on_graph']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['dFromKM'] !== null ? autolinker.link(String(feature.properties['dFromKM']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['total_cost'] !== null ? autolinker.link(String(feature.properties['total_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['route name'] !== null ? autolinker.link(String(feature.properties['route name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -137,694 +127,194 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_rute_laut1_1_0() {
-            return {
-                pane: 'pane_rute_laut1_1',
+        function style_out_1_0(feature) {
+            switch(String(feature.properties['route name'])) {
+                default:
+                    return {
+                pane: 'pane_out_1',
                 opacity: 1,
-                color: 'rgba(231,113,72,1.0)',
+                color: 'rgba(122,229,56,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 1.0,
+                weight: 5.0,
                 fillOpacity: 0,
                 interactive: true,
             }
-        }
-        map.createPane('pane_rute_laut1_1');
-        map.getPane('pane_rute_laut1_1').style.zIndex = 401;
-        map.getPane('pane_rute_laut1_1').style['mix-blend-mode'] = 'normal';
-        var layer_rute_laut1_1 = new L.geoJson(json_rute_laut1_1, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_rute_laut1_1',
-            layerName: 'layer_rute_laut1_1',
-            pane: 'pane_rute_laut1_1',
-            onEachFeature: pop_rute_laut1_1,
-            style: style_rute_laut1_1_0,
-        });
-        bounds_group.addLayer(layer_rute_laut1_1);
-        map.addLayer(layer_rute_laut1_1);
-        function pop_route_ferry_2(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['full_id'] !== null ? autolinker.link(String(feature.properties['full_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(String(feature.properties['osm_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['osm_type'] !== null ? autolinker.link(String(feature.properties['osm_type']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['mooring'] !== null ? autolinker.link(String(feature.properties['mooring']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['floating'] !== null ? autolinker.link(String(feature.properties['floating']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['operator'] !== null ? autolinker.link(String(feature.properties['operator']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(String(feature.properties['name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ferry'] !== null ? autolinker.link(String(feature.properties['ferry']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['building:levels'] !== null ? autolinker.link(String(feature.properties['building:levels']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['building'] !== null ? autolinker.link(String(feature.properties['building']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['public_transport'] !== null ? autolinker.link(String(feature.properties['public_transport']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['man_made'] !== null ? autolinker.link(String(feature.properties['man_made']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cargo'] !== null ? autolinker.link(String(feature.properties['cargo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['amenity'] !== null ? autolinker.link(String(feature.properties['amenity']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_route_ferry_2_0() {
-            return {
-                pane: 'pane_route_ferry_2',
+                    break;
+                case 'Tanjung Priuk Port-':
+                    return {
+                pane: 'pane_out_1',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(231,113,72,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_route_ferry_2');
-        map.getPane('pane_route_ferry_2').style.zIndex = 402;
-        map.getPane('pane_route_ferry_2').style['mix-blend-mode'] = 'normal';
-        var layer_route_ferry_2 = new L.geoJson(json_route_ferry_2, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_route_ferry_2',
-            layerName: 'layer_route_ferry_2',
-            pane: 'pane_route_ferry_2',
-            onEachFeature: pop_route_ferry_2,
-            style: style_route_ferry_2_0,
-        });
-        bounds_group.addLayer(layer_route_ferry_2);
-        map.addLayer(layer_route_ferry_2);
-        function pop_rute_laut4_3(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_id'] !== null ? autolinker.link(String(feature.properties['start_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_coordinates'] !== null ? autolinker.link(String(feature.properties['start_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_entry_cost'] !== null ? autolinker.link(String(feature.properties['start_entry_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_id'] !== null ? autolinker.link(String(feature.properties['end_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_coordinates'] !== null ? autolinker.link(String(feature.properties['end_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_exit_cost'] !== null ? autolinker.link(String(feature.properties['end_exit_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cost_on_graph'] !== null ? autolinker.link(String(feature.properties['cost_on_graph']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['total_cost'] !== null ? autolinker.link(String(feature.properties['total_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_rute_laut4_3_0() {
-            return {
-                pane: 'pane_rute_laut4_3',
-                opacity: 1,
-                color: 'rgba(190,207,80,1.0)',
+                color: 'rgba(140,138,230,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 1.0,
+                weight: 5.0,
                 fillOpacity: 0,
                 interactive: true,
             }
-        }
-        map.createPane('pane_rute_laut4_3');
-        map.getPane('pane_rute_laut4_3').style.zIndex = 403;
-        map.getPane('pane_rute_laut4_3').style['mix-blend-mode'] = 'normal';
-        var layer_rute_laut4_3 = new L.geoJson(json_rute_laut4_3, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_rute_laut4_3',
-            layerName: 'layer_rute_laut4_3',
-            pane: 'pane_rute_laut4_3',
-            onEachFeature: pop_rute_laut4_3,
-            style: style_rute_laut4_3_0,
-        });
-        bounds_group.addLayer(layer_rute_laut4_3);
-        map.addLayer(layer_rute_laut4_3);
-        function pop_rute_laut5_4(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_id'] !== null ? autolinker.link(String(feature.properties['start_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_coordinates'] !== null ? autolinker.link(String(feature.properties['start_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_entry_cost'] !== null ? autolinker.link(String(feature.properties['start_entry_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_id'] !== null ? autolinker.link(String(feature.properties['end_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_coordinates'] !== null ? autolinker.link(String(feature.properties['end_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_exit_cost'] !== null ? autolinker.link(String(feature.properties['end_exit_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cost_on_graph'] !== null ? autolinker.link(String(feature.properties['cost_on_graph']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['total_cost'] !== null ? autolinker.link(String(feature.properties['total_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_rute_laut5_4_0() {
-            return {
-                pane: 'pane_rute_laut5_4',
+                    break;
+                case 'Tanjung Priuk Port-Balikpapan Port':
+                    return {
+                pane: 'pane_out_1',
                 opacity: 1,
-                color: 'rgba(229,182,54,1.0)',
+                color: 'rgba(39,218,69,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 1.0,
+                weight: 5.0,
                 fillOpacity: 0,
                 interactive: true,
             }
-        }
-        map.createPane('pane_rute_laut5_4');
-        map.getPane('pane_rute_laut5_4').style.zIndex = 404;
-        map.getPane('pane_rute_laut5_4').style['mix-blend-mode'] = 'normal';
-        var layer_rute_laut5_4 = new L.geoJson(json_rute_laut5_4, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_rute_laut5_4',
-            layerName: 'layer_rute_laut5_4',
-            pane: 'pane_rute_laut5_4',
-            onEachFeature: pop_rute_laut5_4,
-            style: style_rute_laut5_4_0,
-        });
-        bounds_group.addLayer(layer_rute_laut5_4);
-        map.addLayer(layer_rute_laut5_4);
-        function pop_rute_laut6_5(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_id'] !== null ? autolinker.link(String(feature.properties['start_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_coordinates'] !== null ? autolinker.link(String(feature.properties['start_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_entry_cost'] !== null ? autolinker.link(String(feature.properties['start_entry_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_id'] !== null ? autolinker.link(String(feature.properties['end_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_coordinates'] !== null ? autolinker.link(String(feature.properties['end_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_exit_cost'] !== null ? autolinker.link(String(feature.properties['end_exit_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cost_on_graph'] !== null ? autolinker.link(String(feature.properties['cost_on_graph']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['total_cost'] !== null ? autolinker.link(String(feature.properties['total_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_rute_laut6_5_0() {
-            return {
-                pane: 'pane_rute_laut6_5',
+                    break;
+                case 'Tanjung Priuk Port-Berau Port':
+                    return {
+                pane: 'pane_out_1',
                 opacity: 1,
-                color: 'rgba(190,178,151,1.0)',
+                color: 'rgba(233,108,218,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 1.0,
+                weight: 5.0,
                 fillOpacity: 0,
                 interactive: true,
             }
-        }
-        map.createPane('pane_rute_laut6_5');
-        map.getPane('pane_rute_laut6_5').style.zIndex = 405;
-        map.getPane('pane_rute_laut6_5').style['mix-blend-mode'] = 'normal';
-        var layer_rute_laut6_5 = new L.geoJson(json_rute_laut6_5, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_rute_laut6_5',
-            layerName: 'layer_rute_laut6_5',
-            pane: 'pane_rute_laut6_5',
-            onEachFeature: pop_rute_laut6_5,
-            style: style_rute_laut6_5_0,
-        });
-        bounds_group.addLayer(layer_rute_laut6_5);
-        map.addLayer(layer_rute_laut6_5);
-        function pop_rute_laut7_6(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_id'] !== null ? autolinker.link(String(feature.properties['start_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_coordinates'] !== null ? autolinker.link(String(feature.properties['start_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_entry_cost'] !== null ? autolinker.link(String(feature.properties['start_entry_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_id'] !== null ? autolinker.link(String(feature.properties['end_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_coordinates'] !== null ? autolinker.link(String(feature.properties['end_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_exit_cost'] !== null ? autolinker.link(String(feature.properties['end_exit_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cost_on_graph'] !== null ? autolinker.link(String(feature.properties['cost_on_graph']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['total_cost'] !== null ? autolinker.link(String(feature.properties['total_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_rute_laut7_6_0() {
-            return {
-                pane: 'pane_rute_laut7_6',
+                    break;
+                case 'Tanjung Priuk Port-Bontang Port':
+                    return {
+                pane: 'pane_out_1',
                 opacity: 1,
-                color: 'rgba(125,139,143,1.0)',
+                color: 'rgba(15,64,188,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 1.0,
+                weight: 5.0,
                 fillOpacity: 0,
                 interactive: true,
             }
-        }
-        map.createPane('pane_rute_laut7_6');
-        map.getPane('pane_rute_laut7_6').style.zIndex = 406;
-        map.getPane('pane_rute_laut7_6').style['mix-blend-mode'] = 'normal';
-        var layer_rute_laut7_6 = new L.geoJson(json_rute_laut7_6, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_rute_laut7_6',
-            layerName: 'layer_rute_laut7_6',
-            pane: 'pane_rute_laut7_6',
-            onEachFeature: pop_rute_laut7_6,
-            style: style_rute_laut7_6_0,
-        });
-        bounds_group.addLayer(layer_rute_laut7_6);
-        map.addLayer(layer_rute_laut7_6);
-        function pop_rute_laut8_7(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_id'] !== null ? autolinker.link(String(feature.properties['start_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_coordinates'] !== null ? autolinker.link(String(feature.properties['start_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_entry_cost'] !== null ? autolinker.link(String(feature.properties['start_entry_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_id'] !== null ? autolinker.link(String(feature.properties['end_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_coordinates'] !== null ? autolinker.link(String(feature.properties['end_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_exit_cost'] !== null ? autolinker.link(String(feature.properties['end_exit_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cost_on_graph'] !== null ? autolinker.link(String(feature.properties['cost_on_graph']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['total_cost'] !== null ? autolinker.link(String(feature.properties['total_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_rute_laut8_7_0() {
-            return {
-                pane: 'pane_rute_laut8_7',
+                    break;
+                case 'Tanjung Priuk Port-Kendari Port':
+                    return {
+                pane: 'pane_out_1',
                 opacity: 1,
-                color: 'rgba(164,113,88,1.0)',
+                color: 'rgba(253,178,59,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 1.0,
+                weight: 5.0,
                 fillOpacity: 0,
                 interactive: true,
             }
-        }
-        map.createPane('pane_rute_laut8_7');
-        map.getPane('pane_rute_laut8_7').style.zIndex = 407;
-        map.getPane('pane_rute_laut8_7').style['mix-blend-mode'] = 'normal';
-        var layer_rute_laut8_7 = new L.geoJson(json_rute_laut8_7, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_rute_laut8_7',
-            layerName: 'layer_rute_laut8_7',
-            pane: 'pane_rute_laut8_7',
-            onEachFeature: pop_rute_laut8_7,
-            style: style_rute_laut8_7_0,
-        });
-        bounds_group.addLayer(layer_rute_laut8_7);
-        map.addLayer(layer_rute_laut8_7);
-        function pop_rute_laut9_8(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_id'] !== null ? autolinker.link(String(feature.properties['start_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_coordinates'] !== null ? autolinker.link(String(feature.properties['start_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_entry_cost'] !== null ? autolinker.link(String(feature.properties['start_entry_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_id'] !== null ? autolinker.link(String(feature.properties['end_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_coordinates'] !== null ? autolinker.link(String(feature.properties['end_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_exit_cost'] !== null ? autolinker.link(String(feature.properties['end_exit_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cost_on_graph'] !== null ? autolinker.link(String(feature.properties['cost_on_graph']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['total_cost'] !== null ? autolinker.link(String(feature.properties['total_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_rute_laut9_8_0() {
-            return {
-                pane: 'pane_rute_laut9_8',
+                    break;
+                case 'Tanjung Priuk Port-Makassar Port':
+                    return {
+                pane: 'pane_out_1',
                 opacity: 1,
-                color: 'rgba(114,155,111,1.0)',
+                color: 'rgba(158,136,63,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 1.0,
+                weight: 5.0,
                 fillOpacity: 0,
                 interactive: true,
             }
-        }
-        map.createPane('pane_rute_laut9_8');
-        map.getPane('pane_rute_laut9_8').style.zIndex = 408;
-        map.getPane('pane_rute_laut9_8').style['mix-blend-mode'] = 'normal';
-        var layer_rute_laut9_8 = new L.geoJson(json_rute_laut9_8, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_rute_laut9_8',
-            layerName: 'layer_rute_laut9_8',
-            pane: 'pane_rute_laut9_8',
-            onEachFeature: pop_rute_laut9_8,
-            style: style_rute_laut9_8_0,
-        });
-        bounds_group.addLayer(layer_rute_laut9_8);
-        map.addLayer(layer_rute_laut9_8);
-        function pop_rute_laut10_9(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_id'] !== null ? autolinker.link(String(feature.properties['start_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_coordinates'] !== null ? autolinker.link(String(feature.properties['start_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_entry_cost'] !== null ? autolinker.link(String(feature.properties['start_entry_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_id'] !== null ? autolinker.link(String(feature.properties['end_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_coordinates'] !== null ? autolinker.link(String(feature.properties['end_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_exit_cost'] !== null ? autolinker.link(String(feature.properties['end_exit_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cost_on_graph'] !== null ? autolinker.link(String(feature.properties['cost_on_graph']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['total_cost'] !== null ? autolinker.link(String(feature.properties['total_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_rute_laut10_9_0() {
-            return {
-                pane: 'pane_rute_laut10_9',
+                    break;
+                case 'Tanjung Priuk Port-Manado Port':
+                    return {
+                pane: 'pane_out_1',
                 opacity: 1,
-                color: 'rgba(141,90,153,1.0)',
+                color: 'rgba(95,246,241,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 1.0,
+                weight: 5.0,
                 fillOpacity: 0,
                 interactive: true,
             }
-        }
-        map.createPane('pane_rute_laut10_9');
-        map.getPane('pane_rute_laut10_9').style.zIndex = 409;
-        map.getPane('pane_rute_laut10_9').style['mix-blend-mode'] = 'normal';
-        var layer_rute_laut10_9 = new L.geoJson(json_rute_laut10_9, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_rute_laut10_9',
-            layerName: 'layer_rute_laut10_9',
-            pane: 'pane_rute_laut10_9',
-            onEachFeature: pop_rute_laut10_9,
-            style: style_rute_laut10_9_0,
-        });
-        bounds_group.addLayer(layer_rute_laut10_9);
-        map.addLayer(layer_rute_laut10_9);
-        function pop_rute_laut11_10(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_id'] !== null ? autolinker.link(String(feature.properties['start_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_coordinates'] !== null ? autolinker.link(String(feature.properties['start_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_entry_cost'] !== null ? autolinker.link(String(feature.properties['start_entry_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_id'] !== null ? autolinker.link(String(feature.properties['end_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_coordinates'] !== null ? autolinker.link(String(feature.properties['end_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_exit_cost'] !== null ? autolinker.link(String(feature.properties['end_exit_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cost_on_graph'] !== null ? autolinker.link(String(feature.properties['cost_on_graph']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['total_cost'] !== null ? autolinker.link(String(feature.properties['total_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_rute_laut11_10_0() {
-            return {
-                pane: 'pane_rute_laut11_10',
+                    break;
+                case 'Tanjung Priuk Port-Palu Port':
+                    return {
+                pane: 'pane_out_1',
                 opacity: 1,
-                color: 'rgba(255,158,23,1.0)',
+                color: 'rgba(37,195,230,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 1.0,
+                weight: 5.0,
                 fillOpacity: 0,
                 interactive: true,
             }
-        }
-        map.createPane('pane_rute_laut11_10');
-        map.getPane('pane_rute_laut11_10').style.zIndex = 410;
-        map.getPane('pane_rute_laut11_10').style['mix-blend-mode'] = 'normal';
-        var layer_rute_laut11_10 = new L.geoJson(json_rute_laut11_10, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_rute_laut11_10',
-            layerName: 'layer_rute_laut11_10',
-            pane: 'pane_rute_laut11_10',
-            onEachFeature: pop_rute_laut11_10,
-            style: style_rute_laut11_10_0,
-        });
-        bounds_group.addLayer(layer_rute_laut11_10);
-        map.addLayer(layer_rute_laut11_10);
-        function pop_rute_laut12_11(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_id'] !== null ? autolinker.link(String(feature.properties['start_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_coordinates'] !== null ? autolinker.link(String(feature.properties['start_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['start_entry_cost'] !== null ? autolinker.link(String(feature.properties['start_entry_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_id'] !== null ? autolinker.link(String(feature.properties['end_id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_coordinates'] !== null ? autolinker.link(String(feature.properties['end_coordinates']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['end_exit_cost'] !== null ? autolinker.link(String(feature.properties['end_exit_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cost_on_graph'] !== null ? autolinker.link(String(feature.properties['cost_on_graph']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['total_cost'] !== null ? autolinker.link(String(feature.properties['total_cost']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_rute_laut12_11_0() {
-            return {
-                pane: 'pane_rute_laut12_11',
+                    break;
+                case 'Tanjung Priuk Port-Pontianak Port':
+                    return {
+                pane: 'pane_out_1',
                 opacity: 1,
-                color: 'rgba(231,113,72,1.0)',
+                color: 'rgba(150,158,67,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 1.0,
+                weight: 5.0,
                 fillOpacity: 0,
                 interactive: true,
             }
+                    break;
+                case 'Tanjung Priuk Port-Samarinda Port':
+                    return {
+                pane: 'pane_out_1',
+                opacity: 1,
+                color: 'rgba(20,139,59,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 5.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Tanjung Priuk Port-Sampit Port':
+                    return {
+                pane: 'pane_out_1',
+                opacity: 1,
+                color: 'rgba(237,48,158,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 5.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Tanjung Priuk Port-Tarakan Port':
+                    return {
+                pane: 'pane_out_1',
+                opacity: 1,
+                color: 'rgba(74,83,139,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 5.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+            }
         }
-        map.createPane('pane_rute_laut12_11');
-        map.getPane('pane_rute_laut12_11').style.zIndex = 411;
-        map.getPane('pane_rute_laut12_11').style['mix-blend-mode'] = 'normal';
-        var layer_rute_laut12_11 = new L.geoJson(json_rute_laut12_11, {
+        map.createPane('pane_out_1');
+        map.getPane('pane_out_1').style.zIndex = 401;
+        map.getPane('pane_out_1').style['mix-blend-mode'] = 'normal';
+        var layer_out_1 = new L.geoJson(json_out_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_rute_laut12_11',
-            layerName: 'layer_rute_laut12_11',
-            pane: 'pane_rute_laut12_11',
-            onEachFeature: pop_rute_laut12_11,
-            style: style_rute_laut12_11_0,
+            dataVar: 'json_out_1',
+            layerName: 'layer_out_1',
+            pane: 'pane_out_1',
+            onEachFeature: pop_out_1,
+            style: style_out_1_0,
         });
-        bounds_group.addLayer(layer_rute_laut12_11);
-        map.addLayer(layer_rute_laut12_11);
-        function pop_jalur_darat_ors_wkt_12(feature, layer) {
+        bounds_group.addLayer(layer_out_1);
+        map.addLayer(layer_out_1);
+        function pop_jalur_darat_ors_wkt_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['RouteID'] !== null ? autolinker.link(String(feature.properties['RouteID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -849,11 +339,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_jalur_darat_ors_wkt_12_0(feature) {
+        function style_jalur_darat_ors_wkt_2_0(feature) {
             switch(String(feature.properties['RouteID'])) {
                 case 'SEG001':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(93,44,218,1.0)',
                 dashArray: '',
@@ -866,7 +356,7 @@
                     break;
                 case 'SEG002':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(190,240,82,1.0)',
                 dashArray: '',
@@ -879,7 +369,7 @@
                     break;
                 case 'SEG003':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(233,101,99,1.0)',
                 dashArray: '',
@@ -892,7 +382,7 @@
                     break;
                 case 'SEG004':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(219,138,237,1.0)',
                 dashArray: '',
@@ -905,7 +395,7 @@
                     break;
                 case 'SEG005':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(144,238,152,1.0)',
                 dashArray: '',
@@ -918,7 +408,7 @@
                     break;
                 case 'SEG006':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(237,61,76,1.0)',
                 dashArray: '',
@@ -931,7 +421,7 @@
                     break;
                 case 'SEG007':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(93,169,219,1.0)',
                 dashArray: '',
@@ -944,7 +434,7 @@
                     break;
                 case 'SEG008':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(31,211,205,1.0)',
                 dashArray: '',
@@ -957,7 +447,7 @@
                     break;
                 case 'SEG010':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(80,104,238,1.0)',
                 dashArray: '',
@@ -970,7 +460,7 @@
                     break;
                 case 'SEG011':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(110,230,198,1.0)',
                 dashArray: '',
@@ -983,7 +473,7 @@
                     break;
                 case 'SEG012':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(82,214,42,1.0)',
                 dashArray: '',
@@ -996,7 +486,7 @@
                     break;
                 case 'SEG013':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(70,41,213,1.0)',
                 dashArray: '',
@@ -1009,7 +499,7 @@
                     break;
                 case 'SEG014':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(35,232,206,1.0)',
                 dashArray: '',
@@ -1022,7 +512,7 @@
                     break;
                 case 'SEG015':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(132,169,233,1.0)',
                 dashArray: '',
@@ -1035,7 +525,7 @@
                     break;
                 case 'SEG017':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(81,240,113,1.0)',
                 dashArray: '',
@@ -1048,7 +538,7 @@
                     break;
                 case 'SEG021':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(46,134,227,1.0)',
                 dashArray: '',
@@ -1061,7 +551,7 @@
                     break;
                 case 'SEG023':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(84,220,82,1.0)',
                 dashArray: '',
@@ -1074,7 +564,7 @@
                     break;
                 case 'SEG024':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(212,101,195,1.0)',
                 dashArray: '',
@@ -1087,7 +577,7 @@
                     break;
                 case 'SEG028':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(237,95,19,1.0)',
                 dashArray: '',
@@ -1100,7 +590,7 @@
                     break;
                 case 'SEG029':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(144,214,86,1.0)',
                 dashArray: '',
@@ -1113,7 +603,7 @@
                     break;
                 case 'SEG031':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(32,41,211,1.0)',
                 dashArray: '',
@@ -1126,7 +616,7 @@
                     break;
                 case 'SEG033':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(217,69,113,1.0)',
                 dashArray: '',
@@ -1139,7 +629,7 @@
                     break;
                 case 'SEG034':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(235,215,66,1.0)',
                 dashArray: '',
@@ -1152,7 +642,7 @@
                     break;
                 case 'SEG036':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(204,86,147,1.0)',
                 dashArray: '',
@@ -1165,7 +655,7 @@
                     break;
                 case 'SEG037':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(23,196,235,1.0)',
                 dashArray: '',
@@ -1178,7 +668,7 @@
                     break;
                 case 'SEG038':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(203,224,126,1.0)',
                 dashArray: '',
@@ -1191,7 +681,7 @@
                     break;
                 case 'SEG039':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(221,18,170,1.0)',
                 dashArray: '',
@@ -1204,7 +694,7 @@
                     break;
                 case 'SEG040':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(32,211,86,1.0)',
                 dashArray: '',
@@ -1217,7 +707,7 @@
                     break;
                 case 'SEG041':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(227,157,136,1.0)',
                 dashArray: '',
@@ -1230,7 +720,7 @@
                     break;
                 case 'SEG042':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(213,80,223,1.0)',
                 dashArray: '',
@@ -1243,7 +733,7 @@
                     break;
                 case 'SEG043':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(214,214,123,1.0)',
                 dashArray: '',
@@ -1256,7 +746,7 @@
                     break;
                 case 'SEG044':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(217,141,79,1.0)',
                 dashArray: '',
@@ -1269,7 +759,7 @@
                     break;
                 case 'SEG045':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(237,163,14,1.0)',
                 dashArray: '',
@@ -1282,7 +772,7 @@
                     break;
                 case 'SEG046':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(84,234,61,1.0)',
                 dashArray: '',
@@ -1295,7 +785,7 @@
                     break;
                 case 'SEG047':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(212,108,151,1.0)',
                 dashArray: '',
@@ -1308,7 +798,7 @@
                     break;
                 case 'SEG048':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(51,91,203,1.0)',
                 dashArray: '',
@@ -1321,7 +811,7 @@
                     break;
                 case 'SEG049':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(218,229,124,1.0)',
                 dashArray: '',
@@ -1334,7 +824,7 @@
                     break;
                 case 'SEG050':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(27,200,99,1.0)',
                 dashArray: '',
@@ -1347,7 +837,7 @@
                     break;
                 case 'SEG051':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(198,98,238,1.0)',
                 dashArray: '',
@@ -1360,7 +850,7 @@
                     break;
                 case 'SEG052':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(60,207,220,1.0)',
                 dashArray: '',
@@ -1373,7 +863,7 @@
                     break;
                 case 'SEG054':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(77,174,215,1.0)',
                 dashArray: '',
@@ -1386,7 +876,7 @@
                     break;
                 case 'SEG055':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(202,85,108,1.0)',
                 dashArray: '',
@@ -1399,7 +889,7 @@
                     break;
                 case 'SEG056':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(232,50,226,1.0)',
                 dashArray: '',
@@ -1412,7 +902,7 @@
                     break;
                 case 'SEG057':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(152,75,229,1.0)',
                 dashArray: '',
@@ -1425,7 +915,7 @@
                     break;
                 case 'SEG058':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(200,157,101,1.0)',
                 dashArray: '',
@@ -1438,7 +928,7 @@
                     break;
                 case 'SEG059':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(122,116,215,1.0)',
                 dashArray: '',
@@ -1451,7 +941,7 @@
                     break;
                 case 'SEG061':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(78,240,181,1.0)',
                 dashArray: '',
@@ -1464,7 +954,7 @@
                     break;
                 case 'SEG062':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(227,148,135,1.0)',
                 dashArray: '',
@@ -1477,7 +967,7 @@
                     break;
                 case 'SEG063':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(206,27,141,1.0)',
                 dashArray: '',
@@ -1490,7 +980,7 @@
                     break;
                 case 'SEG064':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(110,229,171,1.0)',
                 dashArray: '',
@@ -1503,7 +993,7 @@
                     break;
                 case 'SEG066':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(153,206,83,1.0)',
                 dashArray: '',
@@ -1516,7 +1006,7 @@
                     break;
                 case 'SEG067':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(133,83,212,1.0)',
                 dashArray: '',
@@ -1529,7 +1019,7 @@
                     break;
                 case 'SEG068':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(162,232,125,1.0)',
                 dashArray: '',
@@ -1542,7 +1032,7 @@
                     break;
                 case 'SEG069':
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(157,89,202,1.0)',
                 dashArray: '',
@@ -1555,7 +1045,7 @@
                     break;
                 default:
                     return {
-                pane: 'pane_jalur_darat_ors_wkt_12',
+                pane: 'pane_jalur_darat_ors_wkt_2',
                 opacity: 1,
                 color: 'rgba(205,168,35,1.0)',
                 dashArray: '',
@@ -1568,21 +1058,21 @@
                     break;
             }
         }
-        map.createPane('pane_jalur_darat_ors_wkt_12');
-        map.getPane('pane_jalur_darat_ors_wkt_12').style.zIndex = 412;
-        map.getPane('pane_jalur_darat_ors_wkt_12').style['mix-blend-mode'] = 'normal';
-        var layer_jalur_darat_ors_wkt_12 = new L.geoJson(json_jalur_darat_ors_wkt_12, {
+        map.createPane('pane_jalur_darat_ors_wkt_2');
+        map.getPane('pane_jalur_darat_ors_wkt_2').style.zIndex = 402;
+        map.getPane('pane_jalur_darat_ors_wkt_2').style['mix-blend-mode'] = 'normal';
+        var layer_jalur_darat_ors_wkt_2 = new L.geoJson(json_jalur_darat_ors_wkt_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_jalur_darat_ors_wkt_12',
-            layerName: 'layer_jalur_darat_ors_wkt_12',
-            pane: 'pane_jalur_darat_ors_wkt_12',
-            onEachFeature: pop_jalur_darat_ors_wkt_12,
-            style: style_jalur_darat_ors_wkt_12_0,
+            dataVar: 'json_jalur_darat_ors_wkt_2',
+            layerName: 'layer_jalur_darat_ors_wkt_2',
+            pane: 'pane_jalur_darat_ors_wkt_2',
+            onEachFeature: pop_jalur_darat_ors_wkt_2,
+            style: style_jalur_darat_ors_wkt_2_0,
         });
-        bounds_group.addLayer(layer_jalur_darat_ors_wkt_12);
-        map.addLayer(layer_jalur_darat_ors_wkt_12);
-        function pop_semuacoordinatdanidjoinan_13(feature, layer) {
+        bounds_group.addLayer(layer_jalur_darat_ors_wkt_2);
+        map.addLayer(layer_jalur_darat_ors_wkt_2);
+        function pop_semuacoordinatdanidjoinan_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td class="visible-with-data" id="id facilities" colspan="2"><strong>id facilities</strong><br />' + (feature.properties['id facilities'] !== null ? autolinker.link(String(feature.properties['id facilities']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -1619,11 +1109,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_semuacoordinatdanidjoinan_13_0(feature) {
+        function style_semuacoordinatdanidjoinan_3_0(feature) {
             switch(String(feature.properties['cluster'])) {
                 case '0':
                     return {
-                pane: 'pane_semuacoordinatdanidjoinan_13',
+                pane: 'pane_semuacoordinatdanidjoinan_3',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1639,7 +1129,7 @@
                     break;
                 case '1':
                     return {
-                pane: 'pane_semuacoordinatdanidjoinan_13',
+                pane: 'pane_semuacoordinatdanidjoinan_3',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1655,7 +1145,7 @@
                     break;
                 case '2':
                     return {
-                pane: 'pane_semuacoordinatdanidjoinan_13',
+                pane: 'pane_semuacoordinatdanidjoinan_3',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1671,7 +1161,7 @@
                     break;
                 case '3':
                     return {
-                pane: 'pane_semuacoordinatdanidjoinan_13',
+                pane: 'pane_semuacoordinatdanidjoinan_3',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1687,7 +1177,7 @@
                     break;
                 default:
                     return {
-                pane: 'pane_semuacoordinatdanidjoinan_13',
+                pane: 'pane_semuacoordinatdanidjoinan_3',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -1703,34 +1193,34 @@
                     break;
             }
         }
-        map.createPane('pane_semuacoordinatdanidjoinan_13');
-        map.getPane('pane_semuacoordinatdanidjoinan_13').style.zIndex = 413;
-        map.getPane('pane_semuacoordinatdanidjoinan_13').style['mix-blend-mode'] = 'normal';
-        var layer_semuacoordinatdanidjoinan_13 = new L.geoJson(json_semuacoordinatdanidjoinan_13, {
+        map.createPane('pane_semuacoordinatdanidjoinan_3');
+        map.getPane('pane_semuacoordinatdanidjoinan_3').style.zIndex = 403;
+        map.getPane('pane_semuacoordinatdanidjoinan_3').style['mix-blend-mode'] = 'normal';
+        var layer_semuacoordinatdanidjoinan_3 = new L.geoJson(json_semuacoordinatdanidjoinan_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_semuacoordinatdanidjoinan_13',
-            layerName: 'layer_semuacoordinatdanidjoinan_13',
-            pane: 'pane_semuacoordinatdanidjoinan_13',
-            onEachFeature: pop_semuacoordinatdanidjoinan_13,
+            dataVar: 'json_semuacoordinatdanidjoinan_3',
+            layerName: 'layer_semuacoordinatdanidjoinan_3',
+            pane: 'pane_semuacoordinatdanidjoinan_3',
+            onEachFeature: pop_semuacoordinatdanidjoinan_3,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_semuacoordinatdanidjoinan_13_0(feature));
+                return L.circleMarker(latlng, style_semuacoordinatdanidjoinan_3_0(feature));
             },
         });
-        bounds_group.addLayer(layer_semuacoordinatdanidjoinan_13);
-        map.addLayer(layer_semuacoordinatdanidjoinan_13);
+        bounds_group.addLayer(layer_semuacoordinatdanidjoinan_3);
+        map.addLayer(layer_semuacoordinatdanidjoinan_3);
         setBounds();
         var i = 0;
-        layer_jalur_darat_ors_wkt_12.eachLayer(function(layer) {
+        layer_out_1.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['RouteID'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['RouteID']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_jalur_darat_ors_wkt_12'});
+            layer.bindTooltip((layer.feature.properties['route name'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['route name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_out_1'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1738,27 +1228,40 @@
               i++;
         });
         var i = 0;
-        layer_semuacoordinatdanidjoinan_13.eachLayer(function(layer) {
+        layer_jalur_darat_ors_wkt_2.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['join_ID'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['join_ID']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_semuacoordinatdanidjoinan_13'});
+            layer.bindTooltip((layer.feature.properties['RouteID'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['RouteID']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_jalur_darat_ors_wkt_2'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_jalur_darat_ors_wkt_12,layer_semuacoordinatdanidjoinan_13]);
+        var i = 0;
+        layer_semuacoordinatdanidjoinan_3.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['join_ID'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['join_ID']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_semuacoordinatdanidjoinan_3'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        resetLabels([layer_out_1,layer_jalur_darat_ors_wkt_2,layer_semuacoordinatdanidjoinan_3]);
         map.on("zoomend", function(){
-            resetLabels([layer_jalur_darat_ors_wkt_12,layer_semuacoordinatdanidjoinan_13]);
+            resetLabels([layer_out_1,layer_jalur_darat_ors_wkt_2,layer_semuacoordinatdanidjoinan_3]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_jalur_darat_ors_wkt_12,layer_semuacoordinatdanidjoinan_13]);
+            resetLabels([layer_out_1,layer_jalur_darat_ors_wkt_2,layer_semuacoordinatdanidjoinan_3]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_jalur_darat_ors_wkt_12,layer_semuacoordinatdanidjoinan_13]);
+            resetLabels([layer_out_1,layer_jalur_darat_ors_wkt_2,layer_semuacoordinatdanidjoinan_3]);
         });
         </script>
     </body>
